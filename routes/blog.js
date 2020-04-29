@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const Blog = require('../models/Blog');
+// const Blog = require('../models/Blog');
+
 const {
-  allBlogs,
+  getBlogs,
   createBlog,
   getBlogById,
   updateBlog,
@@ -14,14 +15,14 @@ const {
 //   res.render('index', { title: 'Express' });
 // });
 
-router.post('/blog', 'createBlog');
+router.post('/blog', createBlog);
 
-router.get('/blogs', 'getAllBlogs');
+router.get('/blogs', getBlogs);
 
-router.get('/blog/:id', 'getBlogById');
+router.get('/blog/:id', getBlogById);
 
-router.get('/blog/:id', 'updateBlog');
+router.put('/blog/:id', updateBlog);
 
-router.delete('/blog/:id', 'deleteBlog');
+router.delete('/blog/:id', deleteBlog);
 
 module.exports = router;
